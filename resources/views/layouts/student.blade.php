@@ -78,8 +78,8 @@
             </div>
 
             <div class="flex items-center space-x-4">
-                <span class="hidden sm:block text-sm text-gray-700">Halo, <strong>Ardhana</strong></span>
-                <img src="https://ui-avatars.com/api/?name=Ardhana&background=8b5cf6&color=fff"
+                <span class="hidden sm:block text-sm text-gray-700">Halo, <strong>{{ Auth::user()->name }}</strong></span>
+                <img src="https://ui-avatars.com/api/?name={{ urlencode(Auth::user()->name) }}&background=8b5cf6&color=fff"
                     class="w-9 h-9 rounded-full border border-purple-200" alt="User Avatar">
             </div>
         </header>
