@@ -57,4 +57,18 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    /**
+     * Display the user's profile details.
+     */
+    public function show(Request $request): View
+    {
+        // Mengambil data guru yang berelasi dengan user yang sedang login
+        $teacher = Auth::user()->teacher;
+
+        return view('profile.show', [
+            'user' => $request->user(),
+            'teacher' => $teacher,
+        ]);
+    }
 }
