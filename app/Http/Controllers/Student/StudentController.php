@@ -31,7 +31,7 @@ class StudentController extends Controller
         $user->selected_class_id = $classId;
         $user->save(); 
 
-        return redirect()->route('student.dashboard')
+        return redirect()->route('student.student.dashboard')
             ->with('success', 'Kelas berhasil dipilih!');
     }
 }

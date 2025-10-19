@@ -17,7 +17,7 @@ class StudentMaterialController extends Controller
         $selectedClassId = session('selected_class');
 
         if (!$selectedClassId) {
-            return redirect()->route('student.dashboard.index')
+            return redirect()->route('student.student.dashboard')
                 ->with('error', 'Silakan pilih kelas terlebih dahulu untuk melihat materi.');
         }
 
