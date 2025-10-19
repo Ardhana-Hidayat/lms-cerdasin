@@ -45,8 +45,8 @@
                 <h2 class="text-xl md:text-2xl font-semibold text-gray-800">Daftar Pertanyaan</h2>
 
                 <a href="{{ route('teacher.quizzes.questions.create', $quiz->id) }}"
-                    class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-xl transition">
-                    + Tambah Pertanyaan
+                    class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg transition">
+                    <i class="fa-solid fa-plus mr-1"></i>Tambah Pertanyaan
                 </a>
             </div>
 
@@ -57,7 +57,7 @@
             @else
                 <div class="overflow-x-auto rounded-lg border border-gray-100">
                     <table class="min-w-full text-sm text-gray-700">
-                        <thead class="bg-gray-50 text-gray-600 uppercase text-xs font-medium">
+                        <thead>
                             <tr>
                                 <th class="py-3 px-6 text-left">No</th>
                                 <th class="py-3 px-6 text-left">Pertanyaan</th>
@@ -71,22 +71,20 @@
                                     <td class="py-4 px-6">
                                         <p class="line-clamp-2">{{ $question->question }}</p>
                                     </td>
-                                    <td class="py-4 px-6 text-center">
-                                        <div class="flex justify-center gap-3">
-                                            <a href="{{ route('teacher.quizzes.questions.edit', [$quiz->id, $question->id]) }}"
-                                                class="text-teal-600 hover:text-teal-800 font-medium">
-                                                Edit
-                                            </a>
-                                            <form
-                                                action="{{ route('teacher.quizzes.questions.destroy', [$quiz->id, $question->id]) }}"
-                                                method="POST" onsubmit="return confirm('Yakin hapus pertanyaan ini?');">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="text-red-500 hover:text-red-700 font-medium">
-                                                    Hapus
-                                                </button>
-                                            </form>
-                                        </div>
+                                    <td class="p-3 text-center space-x-2">
+                                        <a href="{{ route('teacher.quizzes.questions.edit', ['quiz' => $quiz->id, 'question' => $question->id]) }}"
+                                            class="inline-flex items-center justify-center border rounded-md p-2 hover:border-blue-400 hover:text-blue-400 transition">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                        <form action="{{ route('teacher.quizzes.questions.destroy', ['quiz' => $quiz->id, 'question' => $question->id]) }}"
+                                            method="POST" class="inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-flex items-center justify-center border rounded-md p-2 hover:border-red-400 hover:text-red-400 transition">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

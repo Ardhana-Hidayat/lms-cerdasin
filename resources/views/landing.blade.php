@@ -19,7 +19,7 @@
             <a href="#kontak" class="hover:text-purple-600 transition">Kontak</a>
         </nav>
 
-        <a href="/"
+        <a href="/login"
             class="hidden md:block bg-purple-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-purple-700 transition">
             Masuk
         </a>
@@ -35,7 +35,7 @@
             efektif, dan terarah sesuai prinsip <strong>SDGs 4: Pendidikan Berkualitas</strong>.
         </p>
         <div class="flex space-x-4">
-            <a href="/"
+            <a href="/register"
                 class="bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition">
                 Daftar Sekarang
             </a>

@@ -11,7 +11,7 @@ class QuestionController extends Controller
 {
     public function index(Quiz $quiz)
     {
-        $questions = $quiz->questions; 
+        $questions = $quiz->questions;
         return view('pages.teacher.questions.index', compact('quiz', 'questions'));
     }
 
@@ -23,6 +23,8 @@ class QuestionController extends Controller
 
     public function store(Request $request, $quiz_id)
     {
+        $quiz = Quiz::findOrFail($quiz_id);
+
         $request->validate([
             'question' => 'required|string',
             'option_a' => 'required|string',
@@ -33,7 +35,7 @@ class QuestionController extends Controller
         ]);
 
         Question::create([
-            'quiz_id' => $quiz_id,
+            'quiz_id' => $quiz->id,
             'question' => $request->question,
             'option_a' => $request->option_a,
             'option_b' => $request->option_b,
@@ -42,17 +44,19 @@ class QuestionController extends Controller
             'correct_answer' => $request->correct_answer,
         ]);
 
-        return redirect()->route('pages.teacher.questions.index', $quiz_id)
+        return redirect()->route('teacher.quizzes.show', $quiz_id)
             ->with('success', 'Pertanyaan berhasil ditambahkan');
     }
 
-    public function edit($id)
+    public function edit($quiz_id, $id)
     {
+        $quiz = Quiz::findOrFail($quiz_id);
         $question = Question::findOrFail($id);
-        return view('pages.teacher.questions.edit', compact('question'));
+
+        return view('pages.teacher.questions.edit', compact('quiz', 'question'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $quiz_id, $id)
     {
         $request->validate([
             'question' => 'required|string',
@@ -66,16 +70,16 @@ class QuestionController extends Controller
         $question = Question::findOrFail($id);
         $question->update($request->all());
 
-        return redirect()->route('pages.teacher.questions.index', $question->quiz_id)
+        return redirect()->route('teacher.quizzes.show', $quiz_id)
             ->with('success', 'Pertanyaan berhasil diperbarui');
     }
 
-    public function destroy($id)
+    public function destroy($quiz_id, $id)
     {
         $question = Question::findOrFail($id);
         $question->delete();
 
-        return redirect()->route('pages.teacher.questions.index', $question->quiz_id)
+        return redirect()->route('teacher.quizzes.show', $quiz_id)
             ->with('success', 'Pertanyaan berhasil dihapus');
     }
 }
