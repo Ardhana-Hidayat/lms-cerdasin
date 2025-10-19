@@ -3,7 +3,7 @@
 @section('title', 'Kuis')
 
 @section('content')
-    <div class="max-w-lg bg-white shadow rounded-xl p-6">
+    <div class="max-w-lg bg-white border rounded-xl p-6">
         <h2 class="text-xl font-semibold mb-4 text-purple-700">Tambah Kuis</h2>
         <form action="{{ route('teacher.quizzes.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf

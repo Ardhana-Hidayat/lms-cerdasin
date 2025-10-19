@@ -3,7 +3,7 @@
 @section('title', 'Kuis')
 
 @section('content')
-    <div class="max-w-lg bg-white shadow rounded-xl p-6">
+    <div class="max-w-lg bg-white border rounded-xl p-6">
         <h2 class="text-xl font-semibold mb-4 text-purple-700">Edit Kuis</h2>
         <form action="{{ route('teacher.quizzes.update', $quiz->id) }}" method="POST"
             class="grid grid-cols-1 gap-6">

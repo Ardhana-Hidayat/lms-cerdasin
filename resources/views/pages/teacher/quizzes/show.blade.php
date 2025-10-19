@@ -4,7 +4,7 @@
 
 @section('content')
     <div>
-        <div class="bg-white rounded-2xl shadow p-6 border mb-6 border-gray-100">
+        <div class="bg-white rounded-2xl p-6 border mb-6">
             <div>
                 <a href="{{ route('teacher.quizzes.index') }}"
                     class="inline-flex items-center text-slate-400 hover:text-slate-600 mb-4 font-medium transition">
@@ -40,9 +40,9 @@
             </div>
         </div>
 
-        <div class="bg-white rounded-2xl shadow p-6 border border-gray-100">
+        <div class="bg-white rounded-2xl p-6 border">
             <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
-                <h2 class="text-xl md:text-2xl font-semibold text-gray-800">Daftar Pertanyaan</h2>
+                <h2 class="text-xl md:text-2xl font-semibold">Daftar Pertanyaan</h2>
 
                 <a href="{{ route('teacher.quizzes.questions.create', $quiz->id) }}"
                     class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg transition">

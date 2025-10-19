@@ -63,7 +63,6 @@ class ProfileController extends Controller
      */
     public function show(Request $request): View
     {
-        // Mengambil data guru yang berelasi dengan user yang sedang login
         $teacher = Auth::user()->teacher;
 
         return view('profile.show', [

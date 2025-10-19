@@ -3,7 +3,7 @@
 @section('title', 'Edit Pertanyaan')
 
 @section('content')
-<div class="max-w-5xl bg-white shadow rounded-xl p-6">
+<div class="max-w-5xl bg-white border rounded-xl p-6">
 
     {{-- Header --}}
     <div class="flex justify-between items-center mb-4">

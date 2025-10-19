@@ -12,7 +12,7 @@
             </a>
         </div>
 
-        <div class="bg-white shadow rounded-xl p-4">
+        <div class="bg-white border rounded-xl p-4">
             @if ($classes->isEmpty())
                 <p class="text-gray-500 text-center py-6">Belum ada kelas yang ditambahkan.</p>
             @else

@@ -3,7 +3,7 @@
 @section('title', 'Edit Kelas')
 
 @section('content')
-<div class="max-w-lg bg-white shadow rounded-xl p-6">
+<div class="max-w-lg bg-white border rounded-xl p-6">
 
     <form action="{{ route('teacher.classes.update', $class->id) }}" method="POST" class="space-y-4">
         @csrf

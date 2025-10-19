@@ -3,7 +3,7 @@
 @section('title', 'Materi')
 
 @section('content')
-<div class="max-w-5xl bg-white shadow rounded-xl p-6 mx-auto">
+<div class="max-w-5xl bg-white border rounded-xl p-6 mx-auto">
     <h2 class="text-xl font-semibold mb-4 text-purple-700">Tambah Materi</h2>
 
     <form action="{{ route('teacher.materials.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">

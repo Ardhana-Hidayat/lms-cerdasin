@@ -8,13 +8,13 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         <a href="{{ route('teacher.classes.index') }}"
-            class="bg-white shadow rounded-xl p-6 flex flex-col items-center hover:shadow-md transition">
+            class="bg-white border rounded-xl p-6 flex flex-col items-center hover:border-purple-300 transition">
             <i class="fa-solid fa-users text-purple-600 text-3xl mb-2"></i>
             <h3 class="font-semibold">Kelola Kelas</h3>
         </a>
 
         <a href="{{ route('teacher.materials.index') }}"
-            class="bg-white shadow rounded-xl p-6 flex flex-col items-center hover:shadow-md transition">
+            class="bg-white border rounded-xl p-6 flex flex-col items-center hover:border-purple-300 transition">
             <i class="fa-solid fa-book-open text-purple-600 text-3xl mb-2"></i>
             <h3 class="font-semibold">Kelola Materi</h3>
         </a>
