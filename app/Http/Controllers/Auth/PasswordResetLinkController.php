@@ -5,15 +5,16 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Password;
-use Illuminate\View\View;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Password;
+use App\Models\User;
 
 class PasswordResetLinkController extends Controller
 {
     /**
      * Display the password reset link request view.
      */
-    public function create(): View
+    public function create()
     {
         return view('auth.forgot-password');
     }
@@ -25,20 +26,26 @@ class PasswordResetLinkController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        // 1. Validasi input dari form
         $request->validate([
             'email' => ['required', 'email'],
+            'password' => ['required', 'confirmed', Password::defaults()],
         ]);
 
-        // We will send the password reset link to this user. Once we have attempted
-        // to send the link, we will examine the response then see the message we
-        // need to show to the user. Finally, we'll send out a proper response.
-        $status = Password::sendResetLink(
-            $request->only('email')
-        );
+        // 2. Cari pengguna berdasarkan email
+        $user = User::where('email', $request->email)->first();
 
-        return $status == Password::RESET_LINK_SENT
-                    ? back()->with('status', __($status))
-                    : back()->withInput($request->only('email'))
-                        ->withErrors(['email' => __($status)]);
+        // 3. Jika pengguna tidak ditemukan, kembali dengan pesan error
+        if (!$user) {
+            return back()->withErrors(['email' => 'Kami tidak dapat menemukan pengguna dengan alamat email tersebut.']);
+        }
+
+        // 4. Jika pengguna ditemukan, update passwordnya
+        $user->forceFill([
+            'password' => Hash::make($request->password),
+        ])->save();
+
+        // 5. Arahkan kembali ke halaman login dengan pesan sukses
+        return redirect()->route('login')->with('status', 'Kata sandi Anda telah berhasil diubah!');
     }
 }
