@@ -36,7 +36,7 @@ class AuthenticatedSessionController extends Controller
             return redirect()->route('student.student.dashboard');
         }
 
-        return redirect()->route('/login');
+        return redirect()->route('login');
     }
 
     /**

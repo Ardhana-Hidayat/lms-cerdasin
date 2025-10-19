@@ -16,7 +16,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     if (auth()->user()->role == 'teacher') {
-        return redirect()->route('teacher.student.dashboard');
+        return redirect()->route('teacher.teacher.dashboard');
     } elseif (auth()->user()->role == 'student') {
         return redirect()->route('student.student.dashboard');
     }
