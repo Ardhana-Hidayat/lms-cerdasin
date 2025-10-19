@@ -32,16 +32,31 @@
 
             <!-- Main Navigation -->
             <nav class="mt-4 px-4 space-y-2 text-sm font-medium">
-                <a href="/" class="flex items-center gap-3 py-2.5 px-4 rounded-lg hover:bg-gray-100 transition">
-                    <i class="fa-solid fa-chart-line w-5 text-purple-600"></i>
+                <a href="/student/dashboard"
+                    class="flex items-center gap-3 py-2.5 px-4 rounded-lg transition
+                        {{ request()->is('student/dashboard') ? 'bg-purple-100 text-purple-700 font-semibold' : 'hover:bg-gray-100' }}">
+                    <i class="fa-solid fa-chart-line w-5"></i>
                     Dashboard
                 </a>
-                <a href="/materi" class="flex items-center gap-3 py-2.5 px-4 rounded-lg hover:bg-gray-100 transition">
-                    <i class="fa-solid fa-book-open w-5 text-purple-600"></i>
+
+                {{-- <a href="/student/classes"
+                    class="flex items-center gap-3 py-2.5 px-4 rounded-lg transition
+                        {{ request()->is('student/classes') ? 'bg-purple-100 text-purple-700 font-semibold' : 'hover:bg-gray-100' }}">
+                    <i class="fa-solid fa-layer-group w-5"></i>
+                    Kelas
+                </a> --}}
+
+                <a href="/student/materials"
+                    class="flex items-center gap-3 py-2.5 px-4 rounded-lg transition
+                        {{ request()->is('student/materials') ? 'bg-purple-100 text-purple-700 font-semibold' : 'hover:bg-gray-100' }}">
+                    <i class="fa-solid fa-book-open w-5"></i>
                     Materi
                 </a>
-                <a href="/kuis" class="flex items-center gap-3 py-2.5 px-4 rounded-lg hover:bg-gray-100 transition">
-                    <i class="fa-solid fa-puzzle-piece w-5 text-purple-600"></i>
+
+                <a href="/student/quizzes"
+                    class="flex items-center gap-3 py-2.5 px-4 rounded-lg transition
+                        {{ request()->is('student/quizzes') ? 'bg-purple-100 text-purple-700 font-semibold' : 'hover:bg-gray-100' }}">
+                    <i class="fa-solid fa-puzzle-piece w-5"></i>
                     Kuis
                 </a>
             </nav>

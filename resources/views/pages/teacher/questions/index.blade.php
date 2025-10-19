@@ -31,18 +31,17 @@
                                 <td class="p-3 font-medium">{{ $index + 1 }}</td>
                                 <td class="p-3 font-medium">{{ Str::limit($question->question, 60) }}</td>
                                 <td class="p-3 font-medium text-center">{{ $question->correct_answer }}</td>
-                                <td class="p-3 text-center">
-                                    <a href="{{ route('teacher.questions.edit', $question->id) }}"
-                                        class="bg-transparent border rounded-md p-2 hover:border-blue-400 hover:text-blue-400 transition inline-block">
+                                <td class="p-3 text-center space-x-2">
+                                    <a href="{{ route('teacher.questions.edit', $questions->id) }}"
+                                        class="inline-flex items-center justify-center border rounded-md p-2 hover:border-blue-400 hover:text-blue-400 transition">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
-
-                                    <form action="{{ route('teacher.questions.destroy', $question->id) }}" method="POST"
+                                    <form action="{{ route('teacher.questions.destroy', $questions->id) }}" method="POST"
                                         class="inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit"
-                                            class="bg-transparent border rounded-md p-2 hover:border-red-400 hover:text-red-400 transition">
+                                            class="inline-flex items-center justify-center border rounded-md p-2 hover:border-red-400 hover:text-red-400 transition">
                                             <i class="fa-solid fa-trash"></i>
                                         </button>
                                     </form>
