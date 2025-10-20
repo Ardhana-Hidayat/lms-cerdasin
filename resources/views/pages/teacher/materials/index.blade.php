@@ -67,6 +67,12 @@
                                         class="inline-flex items-center justify-center border rounded-md p-2 hover:border-blue-400 hover:text-blue-400 transition">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
+                                    <button type="submit"
+                                        class="bg-transparent border rounded-md p-2 hover:border-blue-400 hover:text-blue-400 transition">
+                                        <a href="{{ route('teacher.materials.show', $m->id) }}">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                    </button>
                                     <form action="{{ route('teacher.materials.destroy', $m->id) }}" method="POST"
                                         class="inline">
                                         @csrf

@@ -49,9 +49,15 @@ class StudentMaterialController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Material $material)
     {
-        //
+        $selectedClassId = session('selected_class');
+
+        if ($material->classroom_id != $selectedClassId) {
+            abort(403, 'Akses ditolak. Materi ini bukan bagian dari kelas Anda.');
+        }
+
+        return view('pages.student.materials.show', compact('material'));
     }
 
     /**

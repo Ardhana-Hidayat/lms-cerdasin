@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Student\StudentMaterialController;
 use App\Http\Controllers\Student\StudentQuizController;
+use App\Http\Controllers\Student\StudentScoreController;
 use App\Http\Controllers\Teacher\ClassController;
 use App\Http\Controllers\Teacher\MaterialController;
 use App\Http\Controllers\Teacher\QuestionController;
@@ -42,8 +43,11 @@ Route::middleware(['auth', 'role:teacher'])->prefix('teacher')->name('teacher.')
 Route::middleware(['auth', 'role:student'])->prefix('student')->name('student.')->group(function () {
     Route::get('dashboard', [StudentController::class, 'index'])->name('student.dashboard');
     Route::resource('classes', StudentController::class);
-    Route::resource('materials', StudentMaterialController::class)->only(['index']);
+    Route::resource('materials', StudentMaterialController::class)->only(['index', 'show']);
     Route::resource('quizzes', StudentQuizController::class)->only(['index', 'show']);
+    Route::post('quizzes/{quiz}/submit', [StudentQuizController::class, 'submit'])->name('quizzes.submit');
+    Route::resource('scores', StudentScoreController::class)->only(['index', 'show']);
 });
+
 
 require __DIR__ . '/auth.php';

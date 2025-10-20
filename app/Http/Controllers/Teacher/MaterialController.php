@@ -53,6 +53,13 @@ class MaterialController extends Controller
         return view('pages.teacher.materials.edit', compact('material', 'classes'));
     }
 
+    public function show($id)
+    {
+        $material = Material::findOrFail($id);
+        $classes = Classroom::all();
+        return view('pages.teacher.materials.show', compact('material', 'classes'));
+    }
+
     public function update(Request $request, $id)
     {
         $material = Material::findOrFail($id);

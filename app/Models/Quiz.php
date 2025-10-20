@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Quiz extends Model
 {
@@ -15,5 +16,10 @@ class Quiz extends Model
     public function questions()
     {
         return $this->hasMany(Question::class);
+    }
+
+    public function myScore()
+    {
+        return $this->hasOne(Score::class)->where('user_id', Auth::id());
     }
 }
