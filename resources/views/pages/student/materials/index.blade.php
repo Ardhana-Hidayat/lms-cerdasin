@@ -22,7 +22,7 @@
                     class="bg-white rounded-xl border overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-1 hover:border-purple-300">
                     <a href="{{ route('student.materials.show', $material->id) }}">
                         <div class="relative w-full h-48 overflow-hidden">
-                            <img src="{{ asset('storage/' . $material->thumbnail) }}" alt="{{ $material->title }}"
+                            <img src="{{ asset('storage/' . ($material->thumbnail ?? 'thumbnails/default.png')) }}" alt="{{ $material->title }}"
                                 class="w-full h-full object-cover">
                         </div>
 
@@ -49,7 +49,7 @@
                                         <span>Lihat</span>
                                     </a>
 
-                                    <a href="{{ asset('storage/' . $material->file_path) }}" download
+                                    <a href="{{ asset('storage/' . $material->file_path ) }}" download
                                         class="inline-flex items-center justify-center w-full gap-2 px-4 py-2 rounded-lg text-sm font-medium
                                         bg-purple-50 text-purple-700 
                                         border border-purple-200 

@@ -6,7 +6,7 @@
             <h1 class="text-2xl font-bold text-purple-700">Detail Profil</h1>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="bg-white p-6 rounded-lg border">
             <div class="max-w-xl">
                 <section>
                     <header>

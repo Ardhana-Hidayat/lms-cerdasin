@@ -39,24 +39,16 @@
                 class="bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition">
                 Daftar Sekarang
             </a>
-            <a href="#fitur"
-                class="border border-purple-600 text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-purple-50 transition">
-                Pelajari Lebih Lanjut
-            </a>
         </div>
     </section>
 
     <!-- Fitur Section -->
     <section id="fitur" class="min-h-screen flex flex-col justify-center items-center py-16 px-6 bg-gradient-to-b from-purple-50 to-white">
         <h3 class="text-3xl font-bold mb-10 text-purple-700">Fitur Unggulan</h3>
-        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition border border-purple-100">
                 <h4 class="font-semibold text-lg mb-2 text-purple-600">Kuis Interaktif</h4>
                 <p class="text-gray-600 text-sm">Belajar jadi seru dengan soal interaktif dan penilaian otomatis.</p>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition border border-purple-100">
-                <h4 class="font-semibold text-lg mb-2 text-purple-600">Jadwal Belajar</h4>
-                <p class="text-gray-600 text-sm">Atur waktu belajar agar lebih konsisten dan efisien setiap hari.</p>
             </div>
             <div class="bg-white p-6 rounded-xl shadow hover:shadow-md transition border border-purple-100">
                 <h4 class="font-semibold text-lg mb-2 text-purple-600">Materi Edukatif</h4>
@@ -79,7 +71,7 @@
     <section id="kontak" class="min-h-screen flex flex-col justify-center items-center bg-purple-600 text-white text-center px-6">
         <h3 class="text-3xl font-bold mb-4">Hubungi Kami</h3>
         <p class="mb-6 max-w-md">Punya saran atau ingin berkolaborasi? Kami senang mendengarnya!</p>
-        <a href="mailto:info@cerdasin.com"
+        <a href="mailto:ardhanahidayat61@gmail.com"
             class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">
             Kirim Email
         </a>
@@ -87,7 +79,7 @@
 
     <!-- Footer -->
     <footer class="py-6 bg-white text-center text-sm text-gray-500 border-t">
-        © {{ date('Y') }} <span class="font-semibold text-purple-600">CerdasIn</span>. Semua Hak Dilindungi.
+        © {{ date('Y') }} <span class="font-semibold text-purple-600">CerdasIn</span> - Kelompok 2 - Pemrograman Web II.
     </footer>
 
 </body>

@@ -5,19 +5,20 @@
 @section('content')
     <div class="max-w-6xl mx-auto">
         <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-6">
-            <a href="#" class="inline-flex items-center gap-2 text-gray-600 hover:text-purple-700 transition-colors">
+            <a href="{{ route('teacher.materials.index') }}"
+                class="inline-flex items-center gap-2 text-gray-600 hover:text-purple-700 transition-colors">
                 <i class="fa-solid fa-arrow-left text-sm"></i>
                 <span>Kembali</span>
             </a>
 
             <div class="flex gap-3">
-                <a href="#"
+                <a href="{{ route('teacher.materials.edit', $material->id) }}"
                     class="inline-flex items-center gap-2 bg-purple-100 text-purple-500 px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-200 transition-all">
                     <i class="fa-solid fa-edit text-xs"></i>
                     <span>Edit</span>
                 </a>
 
-                <form action="#" method="POST"
+                <form action="{{ route('teacher.materials.destroy', $material->id) }}" method="POST"
                     onsubmit="return confirm('Apakah Anda yakin ingin menghapus materi ini?');">
                     @csrf
                     @method('DELETE')
@@ -33,11 +34,10 @@
 
         <div class="bg-white rounded-xl border overflow-hidden">
 
-            <img src="{{ asset('storage/' . $material->thumbnail) }}" alt="{{ $material->title }}"
-                class="w-full h-64 object-cover">
+            <img src="{{ asset('storage/' . ($material->thumbnail ?? 'thumbnails/default.png')) }}"
+                alt="{{ $material->title }}" class="w-full h-128 object-cover">
 
             <div class="p-6 md:p-8">
-
                 <div class="mb-4">
                     <span class="text-xs font-semibold uppercase text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
                         {{ $material->classroom->name }}
@@ -70,7 +70,6 @@
                     </a>
 
                     <div class="flex flex-col sm:flex-row gap-3 max-w-xs">
-
                         <a href="{{ asset('storage/' . $material->file_path) }}" target="_blank"
                             class="inline-flex items-center justify-center w-full gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-purple-600 text-white hover:bg-purple-700 transition-all duration-200">
                             <i class="fa-solid fa-eye text-xs"></i>
@@ -83,6 +82,11 @@
                             <span>Unduh</span>
                         </a>
                     </div>
+                @else
+                    <hr class="my-8">
+
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">Lampiran</h3>
+                    <p class="text-gray-500 italic">Tidak ada lampiran.</p>
                 @endif
             </div>
         </div>

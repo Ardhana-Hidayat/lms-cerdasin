@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'CerdasIn') }}</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -33,7 +33,7 @@
 
             <nav class="mt-4 px-4 space-y-2 text-sm font-medium flex-1">
                 <a href="{{ route('student.student.dashboard') }}"
-                    class="flex items-center gap-3 py-2.5 px-4 rounded-lg transition {{ request()->routeIs('student.dashboard') ? 'bg-purple-100 text-purple-700 font-semibold' : 'hover:bg-gray-100' }}">
+                    class="flex items-center gap-3 py-2.5 px-4 rounded-lg transition {{ request()->routeIs('student.student.dashboard') ? 'bg-purple-100 text-purple-700 font-semibold' : 'hover:bg-gray-100' }}">
                     <i class="fa-solid fa-chart-line w-5"></i>
                     Dashboard
                 </a>

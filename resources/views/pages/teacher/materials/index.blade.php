@@ -34,13 +34,9 @@
 
                                 <!-- Thumbnail -->
                                 <td class="p-3">
-                                    @if ($m->thumbnail)
-                                        <img src="{{ asset('storage/' . $m->thumbnail) }}"
-                                            alt="Thumbnail {{ $m->title }}"
-                                            class="w-16 h-16 object-cover rounded-lg shadow-sm border">
-                                    @else
-                                        <span class="text-gray-400 italic">Tidak ada</span>
-                                    @endif
+                                    <img src="{{ asset('storage/' . (!empty($m->thumbnail) ? $m->thumbnail : 'thumbnails/default.png')) }}"
+                                        alt="Thumbnail {{ $m->title }}"
+                                        class="w-16 h-16 object-cover rounded-lg shadow-sm border">
                                 </td>
 
                                 <!-- Judul -->
