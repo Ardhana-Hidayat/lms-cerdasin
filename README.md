@@ -34,7 +34,7 @@ menghubungkan **guru** dan **siswa** dalam satu platform yang interaktif dan mud
 
 ### 🧑‍🎓 Untuk Siswa
 - **Dashboard Interaktif** – Navigasi cepat ke fitur utama.  
-- **Pemilihan Kelas** – Siswa dapat memilih kelas (misalnya: “Kelas 1 SD”), dan pilihan tersimpan secara permanen.  
+- **Pemilihan Kelas** – Siswa dapat memilih kelas (misalnya: “Kelas 1”).  
 - **Materi Belajar** – Daftar materi dengan thumbnail modern & responsif, difilter berdasarkan kelas.  
 - **Detail Materi** – Membaca materi, melihat gambar, dan mengunduh lampiran.  
 - **Daftar Kuis** – Melihat kuis yang tersedia untuk kelasnya.  
