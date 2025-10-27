@@ -26,7 +26,7 @@ menghubungkan **guru** dan **siswa** dalam satu platform yang interaktif dan mud
 
 ### 🎯 Peran Utama
 - **Siswa (Student)**: Dapat memilih kelas, mengakses materi, dan mengerjakan kuis.
-- **Guru (Teacher)**: Dapat mengelola materi, kuis, dan memantau aktivitas siswa.
+- **Guru (Teacher)**: Dapat mengelola kelas, materi, dan kuis.
 
 ---
 
@@ -36,13 +36,13 @@ menghubungkan **guru** dan **siswa** dalam satu platform yang interaktif dan mud
 - **Dashboard Interaktif** – Navigasi cepat ke fitur utama.  
 - **Pemilihan Kelas** – Siswa dapat memilih kelas (misalnya: “Kelas 1 SD”), dan pilihan tersimpan secara permanen.  
 - **Materi Belajar** – Daftar materi dengan thumbnail modern & responsif, difilter berdasarkan kelas.  
-- **Detail Materi** – Membaca materi, melihat gambar, dan mengunduh lampiran (PDF, dll).  
+- **Detail Materi** – Membaca materi, melihat gambar, dan mengunduh lampiran.  
 - **Daftar Kuis** – Melihat kuis yang tersedia untuk kelasnya.  
 - **Pengerjaan Kuis** – Kuis pilihan ganda dengan antarmuka bersih dan sederhana.  
-- **Halaman Skor Instan** – Melihat hasil dan nilai secara langsung (1–100).
+- **Halaman Skor Instan** – Melihat hasil dan nilai secara langsung.
 
 ### 👩‍🏫 Untuk Guru
-- **Manajemen Materi (CRUD)** – Membuat, membaca, memperbarui, dan menghapus materi pelajaran.  
+- **Manajemen Materi (CRUD)** – Membuat, membaca, memperbarui, dan menghapus materi.  
 - **Detail Materi** – Melihat pratinjau materi, file lampiran, dan kelas yang dituju, lengkap dengan tombol *Edit* & *Hapus*.  
 - **Manajemen Kuis** – Membuat dan mengelola kuis beserta soal-soal pilihan ganda dan kunci jawabannya.  
 
@@ -50,7 +50,7 @@ menghubungkan **guru** dan **siswa** dalam satu platform yang interaktif dan mud
 
 ## 🛠️ Teknologi yang Digunakan
 - **Framework:** Laravel 12  
-- **Frontend:** Tailwind CSS & Alpine.js  
+- **Frontend:** Tailwind CSS
 - **Database:** MySQL  
 
 ---
